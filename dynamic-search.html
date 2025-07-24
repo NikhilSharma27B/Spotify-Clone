@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Container Examples</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f5f5f5;
+            line-height: 1.6;
+        }
+
+        .example {
+            margin-bottom: 30px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .example h3 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        /* Method 1: Wrapper Container */
+        .input-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+            border: 2px solid #ddd;
+            border-radius: 25px;
+            padding: 5px 15px;
+            background-color: white;
+            transition: border-color 0.3s ease;
+        }
+
+        .input-wrapper:focus-within {
+            border-color: #007bff;
+        }
+
+        .input-wrapper input {
+            flex: 1;
+            border: none;
+            outline: none;
+            padding: 10px 5px;
+            font-size: 14px;
+        }
+
+        .input-wrapper .icon {
+            width: 20px;
+            height: 20px;
+            margin: 0 5px;
+            cursor: pointer;
+            opacity: 0.6;
+            transition: opacity 0.3s ease;
+        }
+
+        .input-wrapper .icon:hover {
+            opacity: 1;
+        }
+
+        /* Icons */
+        .search-icon {
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>') no-repeat center;
+            background-size: contain;
+        }
+
+        .user-icon {
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>') no-repeat center;
+            background-size: contain;
+        }
+
+        .eye-icon {
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>') no-repeat center;
+            background-size: contain;
+        }
+
+        .x-icon {
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>') no-repeat center;
+            background-size: contain;
+        }
+
+        code {
+            background-color: #f8f9fa;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Input Container with Elements - Different Methods</h1>
+
+    <div class="example">
+        <h3>Method 1: Flex Wrapper Container (Recommended)</h3>
+        <p>Uses flexbox to arrange elements naturally inside a wrapper. Most flexible and responsive.</p>
+        <div class="input-wrapper">
+            <div class="icon search-icon"></div>
+            <input type="text" placeholder="Search something...">
+            <div class="icon eye-icon"></div>
+            <div class="icon x-icon"></div>
+        </div>
+        <br>
+        <code>&lt;div class="input-wrapper"&gt;...&lt;/div&gt;</code>
+    </div>
+
+    <script>
+        // Add some interactivity
+        document.querySelectorAll('.x-icon').forEach(icon => {
+            icon.addEventListener('click', function() {
+                const input = this.closest('.input-wrapper, .input-container-absolute, .input-multi-elements')?.querySelector('input');
+                if (input) {
+                    input.value = '';
+                    input.focus();
+                }
+            });
+        });
+
+        document.querySelectorAll('.eye-icon').forEach(icon => {
+            icon.addEventListener('click', function() {
+                const input = this.closest('.input-wrapper')?.querySelector('input');
+                if (input) {
+                    input.type = input.type === 'password' ? 'text' : 'password';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

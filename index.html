@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spotify-Web Player: Music for everyone</title>
+  <link rel="icon" id="favicon" type="x-icon" href="images/icons/spotify-icon.ico">
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://kit.fontawesome.com/8bb4a3330b.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="header-left">
+        <img loading="lazy" src="images/icons/spotify.png" alt="Spotify Logo" class="logo spotify-logo" />
+        <div class="spotify-text">Spotify <img loading="lazy" class="r-logo" src="images/icons/R-logo.png" alt=""></div>
+        <div class="home-button-container">
+          <button class="home-btn">
+            <div class="icon home-icon"></div>
+          </button>
+          <div class="hover-text hover-home-text">Home</div>
+        </div>
+        <div class="search-container">
+          <div class="search-button-container">
+            <div class="icon search-icon"></div>
+            <div class="hover-text hover-search-text">Search</div>
+          </div>
+          <input id="search-container-input" type="text" class="search-input" placeholder="What do you want to play?" />
+          <div class="separator separator1">|</div>
+          <div class="browse-button-container">
+            <div class="icon browse-icon"></div>
+            <div class="hover-text hover-browse-text">Browse</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="header-right">
+        <ul class="links">
+          <li class="nav-item mobile-item">
+            <a href="https://accounts.spotify.com/en-GB/login?continue=https%3A%2F%2Fopen.spotify.com%2F"
+              class="nav-link log-in-item">Log in</a>
+          </li>
+          <li class="nav-item mobile-item">
+            <a href="https://www.spotify.com/in-en/signup?forward_url=https%3A%2F%2Fopen.spotify.com%2Fdownload"
+              class="nav-link sign-up-item">Sign up</a>
+          </li>
+          <span class="bars nav-item mobile-item bar-item"></span>
+          <li class="nav-item">
+            <a href="https://www.spotify.com/in-en/premium/" class="nav-link premium-item">Premium</a>
+          </li>
+          <li class="nav-item">
+            <a href="https://support.spotify.com/in-en/" class="nav-link support-item">Support</a>
+          </li>
+          <li class="nav-item">
+            <a href="https://www.spotify.com/in-en/download/windows/" class="nav-link download-item">Download</a>
+          </li>
+          <li class="nav-item mobile-item">
+            <a href="https://www.spotify.com/in-en/legal/privacy-policy/" class="nav-link privacy-item">Privacy</a>
+          </li>
+          <li class="nav-item mobile-item">
+            <a href="https://www.spotify.com/in-en/legal/end-user-agreement/" class="nav-link terms-item">Terms</a>
+
+          </li>
+        </ul>
+
+        <span class="separator separator2">|</span>
+
+        <div class="browse-button-container">
+          <button class="btn install-btn">
+            <div class="icon intsall-icon"></div>Install App
+          </button>
+        </div>
+
+        <button class="btn signup-btn">
+          <a href="https://www.spotify.com/in-en/signup?forward_url=https%3A%2F%2Fopen.spotify.com%2Fdownload">Sign
+            up</a>
+        </button>
+        <button class="btn login-btn" id="changable-content"><a
+            href="https://accounts.spotify.com/en-GB/login?continue=https%3A%2F%2Fopen.spotify.com%2F">Log
+            in</a></button>
+        <div class="hamburger">
+          <span class="bars"></span>
+          <span class="bars"></span>
+          <span class="bars"></span>
+        </div>
+      </div>
+
+    </nav>
+
+  </header>
+
+  <main>
+    <div class="mobile-content">
+      <div class="mobile-content-text premium-text1">Get Premium</div>
+      <div class="mobile-content-text premium-text2">Take control of your listening with ad-free music. Cancel anytime
+      </div>
+      <button class="btn getPremiumbtn">Get Premium</button>
+      <button id="close-btn"><img onclick="remove()" loading="lazy" class="cross-icon" src="images/icons/cross.png"
+          alt=""></button>
+    </div>
+    <article class="article">
+      <div class="content content1">
+        <div class="your-library">
+          <a class="library">Your Library</a>
+          <div class="plus-button-container">
+            <span class="plus-icon">&#10006;</span>
+            <div class="hover-text hover-plus-text">Create Playlist or Folder</div>
+          </div>
+        </div>
+
+        <div class="scroll-area">
+          <div class="playlist-podcast">
+            <div class="create-playlist">
+              <div class="playlist-text">Create your first playlist</div>
+              <div class="guide-text">It's easy, we'll help you</div>
+              <button class="playlist-btn">Create playlist</button>
+            </div>
+
+            <div class="browse-podcast">
+              <div class="podcasts-text">Let's find some podcasts to follow</div>
+              <div class="updated-text">We'll keep you updated on new episodes</div>
+              <button class="browsepodcasts-btn">Browse podcasts</button>
+            </div>
+          </div>
+          <div class="custom-scrollbar-playlist" id="customScrollbarPlaylist">
+            <div class="scrollbar-track-playlist">
+              <div class="scrollbar-thumb-playlist" id="scrollbarThumbPlaylist"></div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="content1-foot">
+          <div class="footer-links">
+            <div class="links-1">
+              <a class="footlinks" href="#">Legal</a>
+              <a class="footlinks" href="#">Safety & Privacy Center</a>
+              <a class="footlinks" href="#">Privacy Policy</a>
+              <a class="footlinks" href="#">Cookies</a>
+              <a class="footlinks" href="#">About Ads</a>
+              <a class="footlinks" href="#">Accessibility</a>
+            </div>
+            <div class="foot-cookies">
+              <a class="cookies" href="#">Cookies</a>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="foot-lang">
+          <button class="lang-btn">
+            <img loading="lazy" class="globe-icon" src="images/icons/globe.png" alt="Globe icon">
+            English
+          </button>
+        </div>
+      </div>
+
+      <div class="scroll-container">
+        <div class="content content2" id="content2">
+
+          <div class="trendingsongs-showall">
+            <a href="#" class="trending-songs">Trending songs</a>
+            <a href="#" class="show-all">Show all</a>
+          </div>
+          <div class="song-tiles"></div>
+
+
+          <div class="popularartists-showall">
+            <a href="#" class="popular-artists">Popular artists</a>
+            <a href="#" class="show-all">Show all</a>
+          </div>
+          <div class="artist-tiles"></div>
+
+
+          <div class="popular-album-showall block">
+            <a href="#" class="popular-album">Popular albums and singles</a>
+            <a href="#" class="show-all">Show all</a>
+          </div>
+          <div class="album-tiles"></div>
+
+
+          <div class="popular-radio-showall block">
+            <a href="#" class="popular-radio">Popular radio</a>
+            <a href="#" class="show-all">Show all</a>
+          </div>
+          <div class="radio-tiles"></div>
+
+
+          <div class="featured-charts-showall block">
+            <a href="#" class="featured-charts">Featured Charts</a>
+            <a href="#" class="show-all">Show all</a>
+          </div>
+          <div class="featured-tiles"></div>
+
+
+          <div class="indias-best-showall block">
+            <a href="#" class="indias-best">India's Best</a>
+            <a href="#" class="show-all">Show all</a>
+          </div>
+          <div class="indiasbest-tiles"></div>
+
+
+          <div class="content2-separator content2-separator1 block"></div>
+          <div class="content2-links linkblock">
+            <div class="links-cols link-col1">
+              <a href="#" class="head-link">Company</a>
+              <a href="" class="sub-links">About</a>
+              <a href="" class="sub-links">Jobs</a>
+              <a href="" class="sub-links">For the Record</a>
+            </div>
+            <div class="links-cols link-col2">
+              <a href="#" class="head-link">Communities</a>
+              <a href="" class="sub-links">For Artists</a>
+              <a href="" class="sub-links">Developers</a>
+              <a href="" class="sub-links">Advertising</a>
+              <a href="" class="sub-links">Investors</a>
+              <a href="" class="sub-links">Vendors</a>
+            </div>
+            <div class="links-cols link-col3">
+              <a href="#" class="head-link">Useful links</a>
+              <a href="" class="sub-links">Support</a>
+              <a href="" class="sub-links">Free Mobile App</a>
+              <a href="" class="sub-links">Popular by Country</a>
+            </div>
+            <div class="links-cols link-col4">
+              <a href="#" class="head-link">Spotify Plans</a>
+              <a href="" class="sub-links">Premium Individual</a>
+              <a href="" class="sub-links">Premium Duo</a>
+              <a href="" class="sub-links">Premium Family</a>
+              <a href="" class="sub-links">Premium Student</a>
+              <a href="" class="sub-links">Spotify Free</a>
+            </div>
+            <div class="socials">
+              <a href="" class="instagram"><img loading="lazy" src="images/icons/instagram.png" alt=""></a>
+              <a href="" class="twitter"><img loading="lazy" src="images/icons/twitter.png" alt=""></a>
+              <a href="" class="facebook"><img loading="lazy" src="images/icons/facebook.png" alt=""></a>
+            </div>
+          </div>
+          <div class="content2-separator content2-separator2 endblock"></div>
+          <a href="#" class="copyright endblock">&copy 2025 Spotify AB</a>
+
+          <footer class="mobile-footer">
+            <div class="mobile-footer-links">
+              <div class="links-1">
+                <a class="mobile-footlinks" href="#">Legal</a>
+                <a class="mobile-footlinks" href="#">Safety & Privacy Center</a>
+                <a class="mobile-footlinks" href="#">Privacy Policy</a>
+                <a class="mobile-footlinks" href="#">Cookies</a>
+                <a class="mobile-footlinks" href="#">About Ads</a>
+                <a class="mobile-footlinks" href="#">Accessibility</a>
+              </div>
+              <a class="mobile-copyright">&copy 2025 Spotify AB</a>
+            </div>
+            <button class="mobile-lang-btn">
+              <img loading="lazy" class="mobile-globe-icon" src="images/icons/globe.png" alt="Globe icon">
+              English
+            </button>
+          </footer>
+
+        </div>
+        <div class="custom-scrollbar" id="customScrollbar2">
+          <div class="scrollbar-track">
+            <div class="scrollbar-thumb" id="scrollbarThumb2"></div>
+          </div>
+        </div>
+      </div>
+
+    </article>
+  </main>
+
+  <footer class="main-footer">
+    <div class="footer-text">
+      <div class="footer-text1">Preview of Spotify</div>
+      <div class="footer-text2">Sign up to get unlimited songs and podcasts With occasional ads. No credit card needed.
+      </div>
+    </div>
+    <button class="footer-signup-btn">Sign up for free</button>
+  </footer>
+
+  <footer class="main-footer-music-play">
+    <div class="left-foot">
+      <img class="current-music" src="">
+      <div class="current-music-text">
+        <p class="foot-song-name"></p>
+        <p class="foot-singer-name"></p>
+      </div>
+      <div class="foot-plus-icon"><i class="fa-solid fa-plus"></i></div>
+    </div>
+    <div class="middle-foot">
+      <audio id="song" src="">
+      </audio>
+      <div class="controls">
+        <div id="shuffle-btn"><i class="fa-solid fa-shuffle"></i></div>
+        <div id="prev-btn"><i class="fa-solid fa-backward-step"></i></div>
+        <div><i id="ctrlIcon" style="color: white;" class="fa-solid fa-circle-play"></i></div>
+        <div id="next-btn"><i class="fa-solid fa-forward-step"></i></div>
+        <div id="loop-btn"><i class="fa-solid fa-repeat"></i></div>
+      </div>
+      <div class="progress-bar">
+        <div id="current-time">0:00</div>
+        <input type="range" value="0" id="progress">
+        <div id="total-time">3:30</div>
+      </div>
+    </div>
+    <div class="right-foot">
+      <div><i class="fa-solid fa-play square-play"></i></div>
+      <div><i class="fa-solid fa-microphone"></i></div>
+      <div><i class="fa-solid fa-bars"></i></div>
+      <div><i class="fa-solid fa-computer"></i></div>
+      <div class="volume-container">
+        <i class="fa-solid fa-volume-high" id="volume-icon"></i>
+        <input type="range" value="100" min="0" max="100" id="volume" orient="vertical">
+      </div>
+      <div><i class="fa-regular fa-window-restore"></i></div>
+      <div><i class="fa-solid fa-up-right-and-down-left-from-center"></i></div>
+    </div>
+  </footer>
+
+  <footer class="mobile-sticky-footer">
+    <div class="flex-column home-area">
+      <div class="icon sticky-home-icon"></div>
+      <span class="sticky-footer-text home-text">Home</span>
+    </div>
+    <div class="flex-column search-area">
+      <div class="icon sticky-search-icon"></div>
+      <span class="sticky-footer-text search-text">Search</span>
+    </div>
+    <div class="flex-column library-area">
+      <div class="icon sticky-library-icon"></div>
+      <span class="sticky-footer-text library-text">Library</span>
+    </div>
+    <div class="flex-column spotifyPremium-area">
+      <div class="icon sticky-spotifyPremium-icon"></div>
+      <span class="sticky-footer-text spotifyPremium-text">Premium</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
