@@ -1273,13 +1273,7 @@ a {
     }
 }
 
-.block{
-    animation: appearTranslateY linear;
-    animation-timeline: view();
-    animation-range: entry 0% cover 40%;
-}
-
-.tilesblock{
+.linkblock{
     animation: appearScale1 linear;
     animation-timeline: view();
     animation-range: entry 0% cover 40%;
