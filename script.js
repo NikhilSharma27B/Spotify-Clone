@@ -778,7 +778,7 @@ function generateArtistTiles() {
   artists.forEach((artist, i) => {
     const tile = document.createElement("div");
     tile.classList.add("artist-tile");
-    
+
     if (i === 0) tile.classList.add("first-tile");
     if (i === artists.length - 1) tile.classList.add("artist-last-tile");
 
@@ -800,7 +800,7 @@ function generateAlbumTiles() {
   albums.forEach((album, i) => {
     const tile = document.createElement("div");
     tile.classList.add("tile");
-    
+
     if (i === 0) tile.classList.add("first-tile");
     if (i === albums.length - 1) tile.classList.add("last-tile");
 
