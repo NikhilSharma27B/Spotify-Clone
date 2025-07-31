@@ -222,6 +222,10 @@ let currentTime = document.getElementById("current-time");
 let totalTime = document.getElementById("total-time");
 let ctrlIcon = document.getElementById("ctrlIcon");
 
+ctrlIcon.addEventListener("click", () => {
+  playPause();
+});
+
 // Format time function
 function formatTime(seconds) {
   const minutes = Math.floor(seconds / 60);
