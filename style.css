@@ -323,7 +323,7 @@ a {
     display: grid;
     grid-template-rows: 70px 270px 100px 100px;
     row-gap: 20px;
-    overflow-y: scroll;
+    overflow-y: hidden;
 }
 
 .content1::-webkit-scrollbar {
@@ -335,6 +335,7 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    cursor: pointer;
 }
 
 .library {
@@ -656,7 +657,9 @@ a {
     width: 100%;
     border-radius: 7.5px;
     object-fit: fill;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.5);
 }
+
 
 .song-name {
     margin-top: 8px;
@@ -744,6 +747,7 @@ a {
     width: 100%;
     border-radius: 50%;
     object-fit: cover;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.5);
 }
 
 .artist-name {
@@ -781,6 +785,7 @@ a {
 .featured-tiles .featured-tile .featured-thumbnail,
 .indiasbest-tiles .indiasbest-tile .indiasbest-thumbnail {
     min-height: 74%;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.5);
 }
 
 .about-charts,

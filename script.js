@@ -7,8 +7,10 @@ hamburger.addEventListener("click", () => {
   navMenu.classList.toggle("active");
 });
 
+/**************************SCROLLBAR*****************************/
 const playlistContainer = document.querySelector(".playlist-podcast");
 const playlistThumb = document.getElementById("scrollbarThumbPlaylist");
+const rootElement = document.documentElement;
 
 function updatePlaylistThumb() {
   const scrollHeight = playlistContainer.scrollHeight;
@@ -24,7 +26,6 @@ function updatePlaylistThumb() {
   playlistThumb.style.top = `${thumbTop}px`;
 }
 
-/**************************SCROLLBAR*****************************/
 playlistContainer.addEventListener("scroll", updatePlaylistThumb);
 window.addEventListener("resize", updatePlaylistThumb);
 window.addEventListener("load", updatePlaylistThumb);
@@ -44,7 +45,7 @@ document.addEventListener("mousemove", (e) => {
   if (!isPlaylistDragging) return;
   const deltaY = e.clientY - playlistStartY;
   const scrollFactor =
-    playlistContainer.scrollHeight / playlistContainer.clientHeight;
+  playlistContainer.scrollHeight / playlistContainer.clientHeight;
   playlistContainer.scrollTop = playlistStartScrollTop + deltaY * scrollFactor;
 });
 
